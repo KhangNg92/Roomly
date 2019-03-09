@@ -39,7 +39,7 @@ app.use("/api/image", imageRoutes);
 
 
 if (process.env.NODE_ENV === 'production') {
-  const appPath = path.join(__dirname, '../dist/', 'Hackathon-Projec')
+  const appPath = path.join(__dirname, 'dist/', 'Hackathon-Projec')
   console.log(__dirname)
   // we want to use all the express static 
   app.use(express.static(appPath))
