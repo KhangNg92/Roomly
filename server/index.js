@@ -21,7 +21,13 @@ mongoose
     useCreateIndex: true
   })
   .then(() => {
-    console.log("connected to db");
+    if (process.env.NODE_ENV === 'production') {
+      // const fakeDb = new FakeDb();
+      // fakeDb.seedDb();
+      console.log("connected to the prod db");
+    } else {
+      console.log('connected to dev db')
+    }
   })
   .catch(err => console.log(err));
 
@@ -31,20 +37,18 @@ app.use("/api/users", userRoutes);
 app.use("/api/bill", billRoutes);
 app.use("/api/image", imageRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  console.log('connected prod db')
-  const appPath = path.join(__dirname, "..", "dist");
 
-  // we want to use all the express static
-  app.use(express.static(appPath));
+if (process.env.NODE_ENV === 'production') {
+  const appPath = path.join(__dirname, '/dist/', 'Hackathon-Projec')
+
+  // we want to use all the express static 
+  app.use(express.static(appPath))
 
   // this will catch every request
-  app.get("*", (req, res) => {
-    res.sendfile(path.resolve(appPath, "index.html"));
-  });
+  app.get('*', (req, res) => {
+    res.sendfile(path.resolve(appPath, 'index.html'))
+  })
   //
-} else {
-  console.log('connected dev db')
 }
 
 const PORT = process.env.PORT || 3001;
