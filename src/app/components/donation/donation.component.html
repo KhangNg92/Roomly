@@ -1,0 +1,105 @@
+<div class="container" id="donate_section">
+    <!--Donate Form-->
+    <div class="row">
+        <div class="col-12">
+            <!-- Default form contact -->
+            <!-- <form class="text-center border border-light p-5" [formGroup]="addBillForm" (ngSubmit)="onCreateBill()"> -->
+            <form class="text-center" #addBillForm='ngForm'>
+
+                <p class="lead mb-4">Post Your Place</p>
+                <small>**This is a gift anyone can give. It has no cost, and it can be tremendously powerful.</small>
+                <br>
+
+                <!--Campaign Title-->
+                <!-- <div class="col-md-12" style="width: 100%">
+                    <input type="text" id="defaultSubscriptionFormPassword" class="form-control mb-4 text-center" placeholder="money"
+                    style="width: 50%; margin: auto"
+                    >
+                </div> -->
+                <!-- calendar -->
+                <!-- <mat-form-field>
+                    <input name="date" [(ngModel)]="newBill.date" matInput [matDatepicker]="picker" placeholder="Please choose or enter a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> -->
+
+                <!-- <mdb-date-picker name="mydate" [options]="myDatePickerOptions" [placeholder]="'Selected date'"
+                    [(ngModel)]="model" required></mdb-date-picker> -->
+
+                <!-- time availability -->
+                <!-- <mat-form-field>
+                    <mat-select name="time" [(ngModel)]="newBill.time" placeholder="Time Availability">
+                        <mat-option *ngFor="let t of timeFormOptions" [value]="t?.value">{{t.label}}</mat-option>
+
+                    </mat-select>
+                </mat-form-field> -->
+
+                <!--Campaign Title-->
+                <input [(ngModel)]="newBill.userName" name="userName" type="text" id="defaultSubscriptionFormPassword"
+                    class="form-control mb-4" placeholder="Organization / Personal's Name">
+                <!--Who are you raising for?-->
+                <!--Zip Code-->
+                <input [(ngModel)]="newBill.street" name="street" type="text" id="defaultSubscriptionFormPassword"
+                    class="form-control mb-4" placeholder="Address">
+
+                <!-- Message -->
+                <div class="form-group">
+                    <textarea [(ngModel)]="newBill.description" name="description" class="form-control rounded-0" id="exampleFormControlTextarea2"
+                        rows="3" placeholder="Description"></textarea>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <p style="text-decoration: underline">Add your item images</p>
+                    <app-image-upload (imageUploaded)="handleImageUpload($event)" (imageError)="handleImageError()">
+                        <i class="fas fa-plus"></i>
+                    </app-image-upload>
+                </div>
+                <button [disabled]="!addBillForm.form.valid" type="submit" class="btn btn-outline-dark" type="submit"
+                    (click)="createBill()" mat-dialog-close>Post</button>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- <img class="featurette-image img-fluid mx-auto" [src]="fullImagePath" alt="Generic placeholder image"> -->
+    <!-- <app-map [location]="bills.city + ',' + bills.street"></app-map> -->
+    <!-- 
+    <section *ngIf="bills && bills.length > 0">
+        <a routerLink="/donation/{{bills._id}}">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <img src="{{bills.image}}" alt="" />
+                            <small>
+                                <p class="text-secondary text-center">{{formatDate(bills.createdAt)}}</p>
+                            </small>
+                            <div class="col-md-10">
+                                <div>
+                                    <a><strong>{{bills.userName}}</strong></a>
+                                    <div class="review-section">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <p>{{bills.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </section> -->
+    <!-- <h1>Or</h1> -->
+    <!--Drop Off Location-->
+    <!-- <div class="row">
+        <div class="col-md-12" id="dropoff_section">
+            <h3>DROP IT OFF</h3>
+            <p>Drop off your gently used furniture and household goods to us and furnish a home for someone in
+                need.
+                Every year we redistribute thousands of furniture items and household goods to the formerly
+                homeless,
+                women and children escaping abusive situations.</p>
+            <p>Check out one of our donation drop off partners!</p>
+        </div>
+    </div>
+</div> -->

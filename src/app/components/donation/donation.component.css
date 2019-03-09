@@ -1,0 +1,63 @@
+.container {
+    margin-top: 80px;
+}
+
+p.lead {
+    font-size: 30px;
+}
+
+small {
+    font-weight: bold;
+}
+
+/* Upload Button*/
+#campaignImage a i {
+    color: red;
+    font-size: 30px;
+    transition: transform .2s;
+}
+
+#campaignImage a i:hover {
+    color: blue;
+    transform: scale(1.2);
+}
+
+input[type="file"] {
+    visibility: hidden;
+}
+
+.image-preview {
+    height: 5rem;
+    margin: 1rem 0;
+}
+
+.image-preview img {
+    height: 100%;
+}
+
+mat-form-field{
+    width: 100%
+}
+
+mdb-date-picker{
+    width: 100%
+}
+
+#donate_section h1 {
+    text-align: center;
+    margin: 60px 0;
+}
+
+#dropoff_section h3 {
+    color: #0277bd;
+    margin-bottom: 30px;
+}
+
+#drop_locations {
+    margin-top: 100px;
+}
+
+#dropoff_locations h5 {
+    color: #0277bd;
+    margin-bottom: 20px;
+}

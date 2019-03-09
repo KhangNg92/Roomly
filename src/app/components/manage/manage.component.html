@@ -1,0 +1,146 @@
+<!-- <h3 class="text-center title">Resource Management Tracker</h3>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">
+        Title <br />
+        <input class="textBox justify-content-center" type="text" placeholder="Search by name" [(ngModel)]="nameSearch" />
+      </th>
+      <th scope="col" class="text-center">
+        Description <br />
+        <input type="text" placeholder="Search by Role" [(ngModel)]="roleSearch" />
+      </th>
+      <th scope="col" class="text-center">
+        Address <br />
+        <input type="text" placeholder="Search by Team" [(ngModel)]="teamSearch" />
+      </th>
+      <th scope="col" class="text-center">
+        Date <br />
+        <input type="text" placeholder="Search by Manager" [(ngModel)]="managerSearch" />
+      </th>
+      <th scope="col" class="text-center">
+        Time <br />
+        <input type="text" placeholder="Search by Location" [(ngModel)]="locationSearch" />
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="
+        let man of users | searchText: 
+        titleSearch : descriptionSearch : addressSearch
+      ">
+      <th class="text-center">{{ man.title }}</th>
+      <td class="text-center">{{ man.description }}</td>
+      <td class="text-center">{{ man.address }}</td>
+      <td class="text-center">{{ man.date }}</td>
+      <td class="text-center">{{ man.time }}</td>
+    </tr>
+    <br />
+  </tbody>
+</table> -->
+<!-- <h1>Lists of the day</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Address</th>
+      <th scope="col">Date</th>
+      <th>Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let man of manage">
+      <th><img src="{{man.image}}" alt="">{{man.image}}</th>
+      <td scope="row">{{man.title}}</td>
+      <td>{{man.description}}</td>
+      <td>{{man.address}}</td>
+      <td>{{man.date | date}}</td>
+      <td>{{man.time}}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<!-- <div class="container">
+  <section id="rentalListing">
+    <h1 class="page-title">Your Home All Around the World</h1>
+    <div class="row">
+      <div class="col-md-3 col-xs-6" *ngFor="let b of bills">
+        <app-manage-item [conBill]="b"></app-manage-item>
+        <p>{{b.title}}</p>
+      </div>
+    </div>
+  </section>
+</div> -->
+
+<!-- <thead>
+    <tr>
+      <th class="image" scope="col"></th>
+      <th scope="col">
+          <mat-form-field>
+              <input matInput [(ngModel)]="titleSearch" placeholder="Title">
+              </mat-form-field>
+        </th>
+      <th scope="col">
+          <mat-form-field>
+              <input matInput [(ngModel)]="descriptionSearch" placeholder="Description">
+              </mat-form-field>
+      </th>
+      <th>
+        <mat-form-field>
+          <input matInput [(ngModel)]="addressSearch" placeholder="Address">
+          </mat-form-field>
+      </th>
+      <t scope="col">
+        <!-- <input class="textBox justify-content-center" type="text" placeholder="Search by Address" [(ngModel)]="dateSearch" /> -->
+<!-- <p class="input-group">>
+        <input class="textBox justify-content-center" [matDatepicker]="myDatepicker" type="text" placeholder="Search by Date" [(ngModel)]="dateSearch">
+        <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+        <mat-datepicker #myDatepicker></mat-datepicker>
+        </p> -->
+
+
+<div class="manage">
+  <div class="manage-header">
+    <h1>Manage Tracker For Manager</h1>
+    <!-- <mat-form-field>
+      <input matInput [matDatepicker]="fromDatepicker" (focus)="fromDatepicker.open()" [(ngModel)]="dateSearchFrom"
+        placeholder="From Date">
+      <mat-datepicker-toggle matSuffix [for]="fromDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #fromDatepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="toDatepicker" (focus)="toDatepicker.open()" [(ngModel)]="dateSearchTo"
+        placeholder="To Date">
+      <mat-datepicker-toggle matSuffix [for]="toDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #toDatepicker></mat-datepicker>
+    </mat-form-field> -->
+  </div>
+  <!--List-->
+  <div class="container">
+    <table class="table">
+      <!-- <thead class="thead-dark">
+        <tr>
+          <th scope="col">Image</th>
+          <th scope="col">Description</th>
+          <th scope="col">Address</th>
+          <th scope="col">Created At</th>
+        </tr>
+      </thead> -->
+      <tbody>
+        <tr *ngFor="let b of (bills | searchText:  titleSearch: descriptionSearch: addressSearch: dateSearch)">
+          <a routerLink="/manage/{{b._id}}">
+            <td scope="row"><img class="image" src="{{b.image}}" alt="">
+            </td>
+            <!-- <td>{{b.userName}}</td> -->
+            <td>{{b.description}}</td>
+            <td>{{b.street}}</td>
+            <td>{{formatDate(b.createdAt)}}</td>
+          </a>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

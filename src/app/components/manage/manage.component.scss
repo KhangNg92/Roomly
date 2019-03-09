@@ -1,0 +1,51 @@
+#rentalListing {
+    /* SINGLE CARD STYLES*/
+    .bwm-card {
+      border: none;
+  
+      .card-block {
+        padding-top: 8px;
+  
+        .card-subtitle {
+          margin: 0;
+          font-weight: 500;
+          font-size: 12px;
+          text-transform: uppercase;
+        }
+  
+        .card-title {
+          font-size: 19px;
+          margin: 3px 0;
+        }
+  
+        .card-text {
+          font-size: 14px;
+          font-weight: 300;
+          color: #7e7e7e;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  
+  .image{
+    width: 215px;
+  }
+
+.manage {
+  margin-top: 80px;
+}
+
+.manage-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.table {
+  width: 100%;
+  margin-left: 10%;
+}
+
+.table tbody, tr {
+  width: 100%;
+}
